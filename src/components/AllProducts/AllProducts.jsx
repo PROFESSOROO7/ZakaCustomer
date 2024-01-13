@@ -230,11 +230,15 @@ export default function Products() {
                     <h3 className="sr-only">Categories</h3>
                     <ul role="list" className="px-2 py-3 font-medium text-gray-900">
                       {subCategories.map((category) => (
+                      
                         <li key={category.name}>
-                          <a href={category.href} className="block px-2 py-3">
+                           <Link to={`/AllProducts/${category.name}`}>
+                          <a  className="block px-2 py-3">
                             {category.name}
                           </a>
+                          </Link>
                         </li>
+                    
                       ))}
                     </ul>
 
@@ -359,7 +363,9 @@ export default function Products() {
                 <ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
                   {subCategories.map((category) => (
                     <li key={category.name}>
+                      <Link to={`/AllProducts/${category.name}`}>
                       <a href={category.href}>{category.name}</a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
